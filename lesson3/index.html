@@ -1,65 +1,2221 @@
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>第三課形容詞｜初級日語單字與否定變化練習卡</title>
-  <script src="https://tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://googleapis.com" rel="stylesheet" />
-  <style>
+&lt;!DOCTYPE html&gt;
+
+&lt;html lang=&quot;zh-Hant&quot;&gt;
+
+&lt;head&gt;
+
+  &lt;meta charset=&quot;UTF-8&quot; /&gt;
+
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+
+  &lt;title&gt;第三課形容詞｜初級日語單字與否定變化練習卡&lt;/title&gt;
+
+  &lt;script src=&quot;\[suspicious link removed\]&quot;&gt;&lt;/script&gt;
+
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.googleapis.com&quot; /&gt;
+
+  &lt;link rel=&quot;preconnect&quot; href=&quot;https://fonts.gstatic.com&quot; crossorigin /&gt;
+
+  &lt;link href=&quot;https://fonts.googleapis.com/css2?family=Inter:wght@600;700;800&amp;family=Noto+Sans+JP:wght@700;900&amp;family=Noto+Sans+TC:wght@700;900&amp;display=swap&quot; rel=&quot;stylesheet&quot; /&gt;
+
+  &lt;style&gt;
+
     body {
-      font-family: 'Noto Sans TC', 'Noto Sans JP', 'Inter', system-ui, -apple-system, sans-serif;
+
+      font-family: &#39;Noto Sans TC&#39;, &#39;Noto Sans JP&#39;, &#39;Inter&#39;, system-ui, -apple-system, sans-serif;
+
       background-color: #ffffff;
+
       color: #111827;
+
     }
+
     .jp-text {
-      font-family: 'Noto Sans JP', 'Noto Sans TC', sans-serif;
+
+      font-family: &#39;Noto Sans JP&#39;, &#39;Noto Sans TC&#39;, sans-serif;
+
     }
+
     .mincho-title {
-      font-family: 'Noto Sans TC', 'Noto Sans JP', sans-serif;
+
+      font-family: &#39;Noto Sans TC&#39;, &#39;Noto Sans JP&#39;, sans-serif;
+
     }
+
     .paper-card {
+
       background-color: #ffffff;
+
       border-color: #111827;
+
     }
+
     /* 3D Flip Card (Grid-stacked so faces never overflow or overlap) */
+
     .perspective-1000 {
+
       perspective: 1200px;
+
     }
+
     .flip-card-inner {
+
       display: grid;
+
       position: relative;
+
       width: 100%;
+
       transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+
       transform-style: preserve-3d;
+
     }
+
     .flip-card-inner.is-flipped {
+
       transform: rotateY(180deg);
+
     }
+
     .cq-container {
+
       container-type: inline-size;
+
     }
+
     .flip-card-face {
+
       grid-area: 1 / 1;
+
       width: 100%;
+
       min-height: 360px;
+
       -webkit-backface-visibility: hidden;
+
       backface-visibility: hidden;
+
       container-type: inline-size;
+
     }
+
     .flip-card-back {
+
       transform: rotateY(180deg);
+
     }
+
     .hide-furigana rt {
+
       opacity: 0;
+
       visibility: hidden;
+
     }
+
     ruby rt {
+
       font-size: 0.52em;
+
       color: #64748b;
+
       font-weight: 500;
+
     }
-  </style>
-</head>
+
+
+
+  &lt;/style&gt;
+
+&lt;/head&gt;
+
+&lt;body class=&quot;min-h-screen antialiased selection:bg-amber-200/60&quot;&gt;
+
+  &lt;div class=&quot;max-w-6xl mx-auto px-4 py-3 sm:py-4 relative&quot;&gt;
+
+    &lt;!-- Header Card (Compact 16:9 Projection Top Bar) --&gt;
+
+    &lt;header class=&quot;bg-white rounded-2xl border-4 border-[#111827] px-4 py-3 mb-3 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-2.5&quot;&gt;
+
+      &lt;div class=&quot;flex items-center justify-center lg:justify-start gap-2.5 flex-wrap&quot;&gt;
+
+        &lt;span class=&quot;inline-flex items-center h-8 px-3 rounded-lg text-xs font-black bg-[#2563EB] text-white&quot;&gt;JLPT N5&lt;/span&gt;
+
+        &lt;h1 class=&quot;text-xl sm:text-2xl font-black text-[#1E3A8A] tracking-tight&quot;&gt;第三課形容詞&lt;/h1&gt;
+
+        &lt;span class=&quot;text-xs text-[#111827] font-bold hidden sm:inline&quot;&gt;・28 詞／14 組反義詞&lt;/span&gt;
+
+      &lt;/div&gt;
+
+      &lt;div class=&quot;flex items-center justify-center lg:justify-end gap-2 flex-wrap&quot;&gt;
+
+        &lt;button id=&quot;toggle-furigana-btn&quot; type=&quot;button&quot; class=&quot;h-9 inline-flex items-center gap-1.5 px-3 rounded-lg text-xs font-black border-2 border-[#111827] bg-white text-[#111827] hover:bg-gray-100 transition&quot;&gt;
+
+          &lt;span id=&quot;furigana-indicator&quot; class=&quot;w-2.5 h-2.5 rounded-full bg-[#16A34A]&quot;&gt;&lt;/span&gt;
+
+          &lt;span&gt;顯示假名&lt;/span&gt;
+
+        &lt;/button&gt;
+
+        &lt;div class=&quot;h-9 inline-flex items-center gap-1.5 px-3 rounded-lg text-xs font-black bg-white border-2 border-[#111827] text-[#111827]&quot;&gt;
+
+          &lt;span&gt;已記熟&lt;/span&gt;
+
+          &lt;span id=&quot;mastered-count&quot; class=&quot;text-[#2563EB]&quot;&gt;0&lt;/span&gt;
+
+          &lt;span class=&quot;text-gray-500&quot;&gt;/ 28&lt;/span&gt;
+
+        &lt;/div&gt;
+
+      &lt;/div&gt;
+
+    &lt;/header&gt;
+
+
+
+    <!-- Navigation Tabs -->
+
+    <nav class="grid grid-cols-3 gap-2 p-1.5 bg-white border-4 border-[#111827] rounded-2xl mb-3" role="tablist">
+
+      <button type="button" data-tab="flashcards" class="tab-btn h-11 px-3 rounded-xl text-sm sm:text-base font-black transition bg-[#111827] text-white">
+
+        單字翻轉卡
+
+      </button>
+
+      <button type="button" data-tab="antonyms" class="tab-btn h-11 px-3 rounded-xl text-sm sm:text-base font-black transition text-[#111827] hover:bg-gray-100">
+
+        反義詞對照
+
+      </button>
+
+      <button type="button" data-tab="quiz" class="tab-btn h-11 px-3 rounded-xl text-sm sm:text-base font-black transition text-[#111827] hover:bg-gray-100">
+
+        否定變形練習
+
+      </button>
+
+    </nav>
+
+
+
+    <!-- TAB 1: FLASHCARDS -->
+
+    <section id="tab-flashcards" class="tab-panel space-y-3">
+
+      <!-- Filter & Shuffle Bar -->
+
+      <div class="flex flex-wrap items-center justify-between gap-2">
+
+        <div class="flex flex-wrap items-center gap-1.5" id="card-filters">
+
+          <button type="button" data-filter="all" class="filter-btn h-10 px-3.5 rounded-xl text-xs sm:text-sm font-black bg-[#111827] text-white border-2 border-[#111827] transition">全部 (28)</button>
+
+          <button type="button" data-filter="i" class="filter-btn h-10 px-3.5 rounded-xl text-xs sm:text-sm font-black bg-white text-[#111827] border-2 border-[#111827] hover:bg-gray-100 transition">い形容詞 (19)</button>
+
+          <button type="button" data-filter="na" class="filter-btn h-10 px-3.5 rounded-xl text-xs sm:text-sm font-black bg-white text-[#111827] border-2 border-[#111827] hover:bg-gray-100 transition">な形容詞 (9)</button>
+
+          <button type="button" data-filter="review" class="filter-btn h-10 px-3.5 rounded-xl text-xs sm:text-sm font-black bg-white text-[#111827] border-2 border-[#111827] hover:bg-gray-100 transition">待複習 (<span id="review-filter-count">0</span>)</button>
+
+        </div>
+
+        <div class="flex items-center gap-1.5">
+
+          <button id="mark-review-btn" type="button" class="h-10 px-3.5 rounded-xl bg-white border-2 border-[#F97316] text-[#F97316] text-xs sm:text-sm font-black hover:bg-orange-50 transition">↺ 需要再練</button>
+
+          <button id="mark-mastered-btn" type="button" class="h-10 px-3.5 rounded-xl bg-[#16A34A] border-2 border-[#111827] text-white text-xs sm:text-sm font-black hover:bg-[#15803D] transition">✓ 已記熟</button>
+
+          <button id="shuffle-btn" type="button" class="h-10 inline-flex items-center gap-1.5 px-3.5 rounded-xl text-xs sm:text-sm font-black bg-white text-[#111827] border-2 border-[#111827] hover:bg-gray-100 transition">
+
+            <span>🔀 隨機洗牌</span>
+
+          </button>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Progress Bar -->
+
+      <div class="space-y-1.5">
+
+        <div class="flex justify-between text-xs font-medium text-slate-500">
+
+          <span id="card-position-text">第 1 / 28 張</span>
+
+          <span>點擊卡片可翻面（空白鍵亦可）</span>
+
+        </div>
+
+        <div class="w-full h-3.5 bg-white border-2 border-[#111827] rounded-full overflow-hidden">
+
+          <div id="card-progress-bar" class="h-full bg-[#1D4ED8] transition-all duration-300" style="width: 3.5%"></div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Empty State for Review Filter -->
+
+      <div id="flashcard-empty" class="hidden bg-white rounded-2xl border-4 border-[#111827] p-10 text-center space-y-4">
+
+        <div class="text-3xl">🎉</div>
+
+        <p class="text-base font-semibold text-slate-800">目前沒有標記「待複習」的單字！</p>
+
+        <p class="text-sm text-slate-500">您可以在練習時點擊「需要再練」加入待複習清單，或切回全部單字繼續練習。</p>
+
+        <button id="reset-filter-btn" type="button" class="h-12 px-6 rounded-xl bg-[#1D4ED8] text-white text-base font-black border-4 border-[#111827] hover:bg-[#2563EB] transition">顯示全部單字</button>
+
+      </div>
+
+
+
+      <!-- 3D Flashcard -->
+
+      <div id="flashcard-stage" class="perspective-1000">
+
+        <div id="flip-card-inner" class="flip-card-inner cursor-pointer select-none" role="button" tabindex="0" aria-label="翻轉單字卡">
+
+          <!-- FRONT -->
+
+          <div class="flip-card-face bg-white rounded-2xl border-4 border-[#111827] p-6 sm:p-8 flex flex-col justify-between">
+
+            <div class="flex items-center justify-between gap-2">
+
+              <div class="flex items-center gap-2 flex-wrap">
+
+                <span id="card-type-badge" class="px-4 py-1.5 rounded-lg text-sm sm:text-base font-black bg-[#2563EB] text-white">い形容詞</span>
+
+                <span id="card-special-badge" class="hidden px-3.5 py-1.5 rounded-lg text-sm font-black bg-[#F97316] text-white">不規則／注意</span>
+
+              </div>
+
+              <span id="card-status-label" class="px-3 py-1 rounded-lg text-sm font-bold bg-gray-100 text-[#111827] border-2 border-gray-300">尚未標記</span>
+
+            </div>
+
+
+
+            <div class="flex flex-col items-center justify-center text-center my-auto py-4 w-full">
+
+              <div id="card-front-word" class="jp-text w-full text-center font-black text-[#111827] leading-tight mb-3" style="font-size: clamp(4rem, 16cqw, 7.5rem);"></div>
+
+              <div id="card-front-kana" class="jp-text text-3xl sm:text-4xl font-black text-[#1E3A8A] tracking-wide mb-4"></div>
+
+              <div id="card-front-meaning" class="inline-block px-7 py-2.5 rounded-xl bg-[#111827] text-white text-2xl sm:text-3xl font-black tracking-wide"></div>
+
+            </div>
+
+
+
+            <div class="text-center pt-3 border-t-4 border-[#111827]">
+
+              <span class="text-sm font-black text-[#111827]">點擊卡片空白處翻面</span>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- BACK -->
+
+          <div class="flip-card-face flip-card-back bg-white rounded-2xl border-4 border-[#111827] p-6 sm:p-8 flex flex-col justify-between overflow-y-auto">
+
+            <div class="flex items-center justify-between pb-3 border-b-4 border-[#111827]">
+
+              <div class="flex items-center gap-3 flex-wrap">
+
+                <span id="card-back-word" class="jp-text text-3xl sm:text-4xl font-black text-[#111827]"></span>
+
+                <span id="card-back-meaning" class="text-xl sm:text-2xl text-[#1E3A8A] font-black"></span>
+
+              </div>
+
+              <span class="text-sm font-black text-[#111827]">點擊空白處翻回</span>
+
+            </div>
+
+
+
+            <div class="space-y-3 my-auto py-3">
+
+              <!-- Negative Conjugation Box -->
+
+              <div class="bg-white border-4 border-[#F97316] rounded-xl p-3.5">
+
+                <div class="flex items-center justify-between gap-2 mb-1 flex-wrap">
+
+                  <span class="px-2.5 py-0.5 rounded bg-[#F97316] text-white text-xs sm:text-sm font-black">否定變化</span>
+
+                  <span id="card-neg-rule" class="text-sm text-[#111827] font-black"></span>
+
+                </div>
+
+                <div id="card-neg-form" class="jp-text text-3xl sm:text-4xl font-black text-[#111827]"></div>
+
+                <div id="card-neg-alt" class="jp-text text-sm sm:text-base font-bold text-gray-700 mt-1"></div>
+
+              </div>
+
+
+
+              <!-- Antonym Box -->
+
+              <div class="flex items-center justify-between gap-2 bg-white border-4 border-[#111827] rounded-xl px-4 py-2.5">
+
+                <span class="px-2.5 py-0.5 rounded bg-[#15803D] text-white text-sm sm:text-base font-black shrink-0">↔ 反義詞</span>
+
+                <div class="flex items-center gap-3 flex-wrap justify-end">
+
+                  <div class="text-right">
+
+                    <span id="card-antonym-word" class="jp-text font-black text-[#111827] text-3xl sm:text-4xl"></span>
+
+                    <span id="card-antonym-meaning" class="text-xl sm:text-2xl font-black text-[#1E3A8A] ml-2"></span>
+
+                  </div>
+
+                  <button id="speak-antonym-btn" type="button" class="p-1.5 rounded-lg hover:bg-gray-100 active:scale-90 text-2xl transition cursor-pointer" title="朗讀反義詞發音">🔊</button>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- Example Sentence -->
+
+              <div class="bg-white border-2 border-[#2563EB] rounded-xl p-3.5 space-y-1">
+
+                <div class="inline-block px-2.5 py-0.5 rounded bg-[#2563EB] text-white text-xs font-black">實用否定例句</div>
+
+                <div id="card-example-jp" class="jp-text text-xl sm:text-2xl leading-snug font-black text-[#111827]"></div>
+
+                <div id="card-example-zh" class="text-base sm:text-lg font-bold text-gray-700"></div>
+
+              </div>
+
+            </div>
+
+
+
+            <div class="flex justify-end pt-2 border-t-2 border-gray-200">
+
+              <button id="speak-back-btn" type="button" class="w-full sm:w-auto min-w-[220px] h-[72px] px-8 py-3 rounded-2xl bg-[#1D4ED8] hover:bg-[#2563EB] hover:-translate-y-0.5 hover:shadow-[0_8px_0_#111827] active:translate-y-1 active:shadow-none text-white text-2xl font-black tracking-wider inline-flex items-center justify-center gap-3 border-4 border-[#111827] shadow-[0_6px_0_#111827] transition-all cursor-pointer">
+
+                <span class="text-3xl">🔊</span>
+
+                <span>唸例句</span>
+
+              </button>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Bottom Single-Row Controls (Uniform Height, 3D Tactile Shadow, WCAG AAA) -->
+
+      <div id="flashcard-controls" class="grid grid-cols-3 gap-3 pb-1">
+
+        <button id="speak-front-btn" type="button" class="h-[72px] px-4 rounded-2xl bg-[#F97316] hover:bg-[#FB923C] hover:-translate-y-0.5 hover:shadow-[0_8px_0_#111827] active:translate-y-1 active:shadow-none text-[#111827] text-xl sm:text-2xl font-black inline-flex items-center justify-center gap-2 border-4 border-[#111827] shadow-[0_6px_0_#111827] transition-all cursor-pointer" title="朗讀日語發音">
+
+          <span class="text-2xl sm:text-3xl">🔊</span>
+
+          <span>發音</span>
+
+        </button>
+
+        <button id="prev-card-btn" type="button" class="h-[72px] px-4 rounded-2xl bg-white hover:bg-blue-50 hover:-translate-y-0.5 hover:shadow-[0_8px_0_#111827] active:translate-y-1 active:shadow-none text-[#111827] text-xl sm:text-2xl font-black inline-flex items-center justify-center border-4 border-[#111827] shadow-[0_6px_0_#111827] transition-all cursor-pointer">← 上一張</button>
+
+        <button id="next-card-btn" type="button" class="h-[72px] px-4 rounded-2xl bg-[#1D4ED8] hover:bg-[#2563EB] hover:-translate-y-0.5 hover:shadow-[0_8px_0_#111827] active:translate-y-1 active:shadow-none text-white text-xl sm:text-2xl font-black inline-flex items-center justify-center border-4 border-[#111827] shadow-[0_6px_0_#111827] transition-all cursor-pointer">下一張 →</button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- TAB 2: ANTONYMS -->
+
+    <section id="tab-antonyms" class="tab-panel hidden space-y-4">
+
+      <div class="flex flex-wrap items-center justify-between gap-2 bg-white p-3 rounded-2xl border-4 border-[#111827]">
+
+        <div class="flex items-center gap-2">
+
+          <button id="antonym-view-list-btn" type="button" class="h-10 px-4 rounded-xl text-sm font-black bg-[#2563EB] text-white border-2 border-[#111827] transition">反義詞總表 (14 組)</button>
+
+          <button id="antonym-view-game-btn" type="button" class="h-10 px-4 rounded-xl text-sm font-black bg-white text-[#111827] border-2 border-[#111827] hover:bg-gray-100 transition">配對挑戰遊戲</button>
+
+        </div>
+
+        <span class="text-xs sm:text-sm font-bold text-[#111827]">點擊單字可聆聽日語發音</span>
+
+      </div>
+
+
+
+      <!-- List View -->
+
+      <div id="antonym-list-view" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+
+
+
+      <!-- Matching Game View -->
+
+      <div id="antonym-game-view" class="hidden space-y-3">
+
+        <div class="flex flex-wrap items-center justify-between gap-2 bg-white border-4 border-[#111827] rounded-2xl px-4 py-3">
+
+          <div class="text-sm sm:text-base font-black text-[#1E3A8A]">
+
+            請依序點選左欄與右欄互為反義詞的單字
+
+          </div>
+
+          <div class="flex items-center gap-3 text-xs sm:text-sm font-black">
+
+            <span class="px-2.5 py-1 rounded-lg bg-[#16A34A] text-white">完成：<span id="match-progress">0</span> / 5</span>
+
+            <span class="text-[#111827]">嘗試：<span id="match-attempts">0</span> 次</span>
+
+            <button id="new-match-game-btn" type="button" class="h-10 px-4 rounded-xl bg-[#F97316] border-2 border-[#111827] text-white font-black hover:bg-[#EA580C] transition">換一組題目</button>
+
+          </div>
+
+        </div>
+
+
+
+        <div id="match-feedback" class="hidden rounded-xl px-4 py-2.5 text-sm font-medium"></div>
+
+
+
+        <div class="grid grid-cols-2 gap-3 sm:gap-5">
+
+          <div id="match-left-col" class="space-y-2.5"></div>
+
+          <div id="match-right-col" class="space-y-2.5"></div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- TAB 3: NEGATIVE CONJUGATION QUIZ -->
+
+    <section id="tab-quiz" class="tab-panel hidden space-y-3">
+
+      <!-- Grammar Cheat Sheet (Collapsible) -->
+
+      <div class="bg-white rounded-2xl border-4 border-[#111827] overflow-hidden">
+
+        <button id="toggle-grammar-btn" type="button" class="w-full flex items-center justify-between px-5 py-3 text-left hover:bg-gray-50 transition">
+
+          <span class="text-sm sm:text-base font-black text-[#111827]">📖 形容詞否定變化規則速查</span>
+
+          <span id="grammar-chevron" class="text-xs sm:text-sm font-black text-[#2563EB]">展開規則 ▼</span>
+
+        </button>
+
+        <div id="grammar-panel" class="hidden px-5 pb-4 pt-2 border-t-2 border-gray-200 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+
+          <div class="bg-white border-2 border-[#2563EB] rounded-xl p-3.5 space-y-1">
+
+            <div class="font-black text-[#2563EB]">い形容詞：去「い」＋「くないです」</div>
+
+            <p class="text-[#111827] font-bold jp-text">高い → 高<span class="text-[#F97316]">くないです</span>（不貴）</p>
+
+            <p class="text-[#F97316] font-black jp-text">⚠️ 例外：いい → よくないです（不好）</p>
+
+          </div>
+
+          <div class="bg-white border-2 border-[#16A34A] rounded-xl p-3.5 space-y-1">
+
+            <div class="font-black text-[#16A34A]">な形容詞：詞幹 ＋「じゃないです」／「ではありません」</div>
+
+            <p class="text-[#111827] font-bold jp-text">静か（な）→ 静か<span class="text-[#F97316]">じゃないです</span></p>
+
+            <p class="text-[#F97316] font-black jp-text">⚠️ 陷阱：きれい（な）→ きれいじゃないです</p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Quiz Settings & Score -->
+
+      <div class="flex flex-wrap items-center justify-between gap-2">
+
+        <div class="flex flex-wrap items-center gap-1.5">
+
+          <select id="quiz-type-filter" class="h-10 px-3 rounded-xl text-xs sm:text-sm font-black bg-white border-2 border-[#111827] text-[#111827]">
+
+            <option value="all">題型：綜合（い + な）</option>
+
+            <option value="i">題型：只練 い形容詞</option>
+
+            <option value="na">題型：只練 な形容詞</option>
+
+          </select>
+
+          <select id="quiz-mode-select" class="h-10 px-3 rounded-xl text-xs sm:text-sm font-black bg-white border-2 border-[#111827] text-[#111827]">
+
+            <option value="choice">作答：四選一</option>
+
+            <option value="typing">作答：輸入變化</option>
+
+          </select>
+
+          <label class="h-10 inline-flex items-center gap-1.5 px-3 rounded-xl text-xs sm:text-sm font-black bg-white border-2 border-[#111827] text-[#111827] cursor-pointer">
+
+            <input id="quiz-show-type-hint" type="checkbox" checked class="rounded text-[#2563EB]" />
+
+            <span>顯示詞性提示</span>
+
+          </label>
+
+        </div>
+
+        <div class="flex items-center gap-2 text-xs sm:text-sm font-black">
+
+          <span class="h-10 inline-flex items-center px-3 rounded-xl bg-[#16A34A] text-white border-2 border-[#111827]">連對：<span id="quiz-streak" class="ml-1">0</span></span>
+
+          <span class="h-10 inline-flex items-center px-3 rounded-xl bg-white text-[#111827] border-2 border-[#111827]">答對：<span id="quiz-score" class="mx-1">0</span> / <span id="quiz-total" class="ml-1">0</span></span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- Quiz Card -->
+
+      <div class="bg-white rounded-2xl border-4 border-[#111827] p-6 sm:p-8 space-y-5">
+
+        <div class="text-center space-y-2">
+
+          <div class="flex items-center justify-center gap-2 flex-wrap">
+
+            <span class="text-xs sm:text-sm font-black text-gray-600">請寫出／選出正確的「否定形（禮貌體）」</span>
+
+            <span id="quiz-type-badge" class="px-3 py-1 rounded-lg text-xs sm:text-sm font-black bg-[#2563EB] text-white">い形容詞</span>
+
+          </div>
+
+          <div id="quiz-prompt-word" class="jp-text text-5xl sm:text-6xl font-black text-[#111827] pt-1"></div>
+
+          <div id="quiz-prompt-meaning" class="text-lg sm:text-xl text-[#1E3A8A] font-black"></div>
+
+        </div>
+
+
+
+        <!-- Choice Options -->
+
+        <div id="quiz-choices-container" class="grid grid-cols-1 sm:grid-cols-2 gap-3"></div>
+
+
+
+        <!-- Typing Input -->
+
+        <div id="quiz-typing-container" class="hidden space-y-3 max-w-lg mx-auto">
+
+          <div class="flex gap-2">
+
+            <input id="quiz-typing-input" type="text" placeholder="例：高くないです / たかくないです" class="jp-text flex-1 h-14 px-4 rounded-xl border-4 border-[#111827] text-lg font-bold focus:outline-none" autocomplete="off" />
+
+            <button id="quiz-submit-typing-btn" type="button" class="h-14 px-6 rounded-xl bg-[#2563EB] border-4 border-[#111827] text-white text-lg font-black hover:bg-[#1D4ED8] transition">送出</button>
+
+          </div>
+
+          <p class="text-xs font-bold text-gray-600 text-center">可輸入漢字或純平假名，接受 ～くないです 或 ～じゃないです／ではありません</p>
+
+        </div>
+
+
+
+        <!-- Feedback Area -->
+
+        <div id="quiz-feedback" class="hidden rounded-xl p-4 space-y-1">
+
+          <div id="quiz-feedback-title" class="text-base sm:text-lg font-black"></div>
+
+          <div id="quiz-feedback-detail" class="text-sm font-bold"></div>
+
+        </div>
+
+
+
+        <div class="flex justify-end">
+
+          <button id="next-quiz-btn" type="button" class="hidden h-14 px-8 rounded-2xl bg-[#111827] text-white text-lg font-black hover:bg-gray-800 active:scale-95 transition">下一題 →</button>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  &lt;/div&gt;
+
+
+
+  &lt;script&gt;
+
+    const ADJECTIVES = [
+
+      { id: 1, word: &#39;大きい&#39;, ruby: &#39;&lt;ruby&gt;大&lt;rt&gt;おお&lt;/rt&gt;&lt;/ruby&gt;きい&#39;, kana: &#39;おおきい&#39;, type: &#39;i&#39;, meaning: &#39;大的&#39;, neg: &#39;大きくないです&#39;, negKana: &#39;おおきくないです&#39;, negAlt: &#39;常體：大きくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 2, exampleJp: &#39;この部屋は&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;大きくないです&lt;/span&gt;。&#39;, examplePlain: &#39;この部屋は大きくないです。&#39;, exampleZh: &#39;這間房間不大。&#39; },
+
+      { id: 2, word: &#39;小さい&#39;, ruby: &#39;&lt;ruby&gt;小&lt;rt&gt;ちい&lt;/rt&gt;&lt;/ruby&gt;さい&#39;, kana: &#39;ちいさい&#39;, type: &#39;i&#39;, meaning: &#39;小的&#39;, neg: &#39;小さくないです&#39;, negKana: &#39;ちいさくないです&#39;, negAlt: &#39;常體：小さくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 1, exampleJp: &#39;私のかばんは&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;小さくないです&lt;/span&gt;。&#39;, examplePlain: &#39;私のかばんは小さくないです。&#39;, exampleZh: &#39;我的包包不小。&#39; },
+
+      { id: 3, word: &#39;高い&#39;, ruby: &#39;&lt;ruby&gt;高&lt;rt&gt;たか&lt;/rt&gt;&lt;/ruby&gt;い&#39;, kana: &#39;たかい&#39;, type: &#39;i&#39;, meaning: &#39;高的／貴的&#39;, neg: &#39;高くないです&#39;, negKana: &#39;たかくないです&#39;, negAlt: &#39;常體：高くない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 4, exampleJp: &#39;その時計は&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;高くないです&lt;/span&gt;。&#39;, examplePlain: &#39;その時計は高くないです。&#39;, exampleZh: &#39;那支手錶不貴。&#39; },
+
+      { id: 4, word: &#39;安い&#39;, ruby: &#39;&lt;ruby&gt;安&lt;rt&gt;やす&lt;/rt&gt;&lt;/ruby&gt;い&#39;, kana: &#39;やすい&#39;, type: &#39;i&#39;, meaning: &#39;便宜的&#39;, neg: &#39;安くないです&#39;, negKana: &#39;やすくないです&#39;, negAlt: &#39;常體：安くない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 3, exampleJp: &#39;日本のフルーツは&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;安くないです&lt;/span&gt;。&#39;, examplePlain: &#39;日本のフルーツは安くないです。&#39;, exampleZh: &#39;日本的水果不便宜。&#39; },
+
+      { id: 5, word: &#39;新しい&#39;, ruby: &#39;&lt;ruby&gt;新&lt;rt&gt;あたら&lt;/rt&gt;&lt;/ruby&gt;しい&#39;, kana: &#39;あたらしい&#39;, type: &#39;i&#39;, meaning: &#39;新的&#39;, neg: &#39;新しくないです&#39;, negKana: &#39;あたらしくないです&#39;, negAlt: &#39;常體：新しくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 6, exampleJp: &#39;このパソコンは&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;新しくないです&lt;/span&gt;。&#39;, examplePlain: &#39;このパソコンは新しくないです。&#39;, exampleZh: &#39;這台電腦不新。&#39; },
+
+      { id: 6, word: &#39;古い&#39;, ruby: &#39;&lt;ruby&gt;古&lt;rt&gt;ふる&lt;/rt&gt;&lt;/ruby&gt;い&#39;, kana: &#39;ふるい&#39;, type: &#39;i&#39;, meaning: &#39;舊的&#39;, neg: &#39;古くないです&#39;, negKana: &#39;ふるくないです&#39;, negAlt: &#39;常體：古くない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 5, exampleJp: &#39;あのお寺はあまり&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;古くないです&lt;/span&gt;。&#39;, examplePlain: &#39;あのお寺はあまり古くないです。&#39;, exampleZh: &#39;那座寺廟不太舊。&#39; },
+
+      { id: 7, word: &#39;暑い&#39;, ruby: &#39;&lt;ruby&gt;暑&lt;rt&gt;あつ&lt;/rt&gt;&lt;/ruby&gt;い&#39;, kana: &#39;あつい&#39;, type: &#39;i&#39;, meaning: &#39;熱的（天氣）&#39;, neg: &#39;暑くないです&#39;, negKana: &#39;あつくないです&#39;, negAlt: &#39;常體：暑くない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 8, exampleJp: &#39;今日はぜんぜん&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;暑くないです&lt;/span&gt;。&#39;, examplePlain: &#39;今日はぜんぜん暑くないです。&#39;, exampleZh: &#39;今天一點也不熱。&#39; },
+
+      { id: 8, word: &#39;寒い&#39;, ruby: &#39;&lt;ruby&gt;寒&lt;rt&gt;さむ&lt;/rt&gt;&lt;/ruby&gt;い&#39;, kana: &#39;さむい&#39;, type: &#39;i&#39;, meaning: &#39;冷的（天氣）&#39;, neg: &#39;寒くないです&#39;, negKana: &#39;さむくないです&#39;, negAlt: &#39;常體：寒くない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 7, exampleJp: &#39;台北の冬はあまり&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;寒くないです&lt;/span&gt;。&#39;, examplePlain: &#39;台北の冬はあまり寒くないです。&#39;, exampleZh: &#39;台北的冬天不太冷。&#39; },
+
+      { id: 9, word: &#39;いい&#39;, ruby: &#39;いい（&lt;ruby&gt;良&lt;rt&gt;よ&lt;/rt&gt;&lt;/ruby&gt;い）&#39;, kana: &#39;いい&#39;, type: &#39;i&#39;, special: &#39;不規則變化&#39;, meaning: &#39;好的&#39;, neg: &#39;よくないです&#39;, negKana: &#39;よくないです&#39;, negAlt: &#39;常體：よくない（不可說 いくない）&#39;, rule: &#39;いい → よくないです&#39;, antonymId: 10, exampleJp: &#39;今日は天気が&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;よくないです&lt;/span&gt;。&#39;, examplePlain: &#39;今日は天気がよくないです。&#39;, exampleZh: &#39;今天天氣不好。&#39; },
+
+      { id: 10, word: &#39;悪い&#39;, ruby: &#39;&lt;ruby&gt;悪&lt;rt&gt;わる&lt;/rt&gt;&lt;/ruby&gt;い&#39;, kana: &#39;わるい&#39;, type: &#39;i&#39;, meaning: &#39;壞的／不好的&#39;, neg: &#39;悪くないです&#39;, negKana: &#39;わるくないです&#39;, negAlt: &#39;常體：悪くない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 9, exampleJp: &#39;体調は&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;悪くないです&lt;/span&gt;。&#39;, examplePlain: &#39;体調は悪くないです。&#39;, exampleZh: &#39;身體狀況不算差。&#39; },
+
+      { id: 11, word: &#39;おいしい&#39;, ruby: &#39;おいしい&#39;, kana: &#39;おいしい&#39;, type: &#39;i&#39;, meaning: &#39;好吃的&#39;, neg: &#39;おいしくないです&#39;, negKana: &#39;おいしくないです&#39;, negAlt: &#39;常體：おいしくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 12, exampleJp: &#39;このスープはあまり&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;おいしくないです&lt;/span&gt;。&#39;, examplePlain: &#39;このスープはあまりおいしくないです。&#39;, exampleZh: &#39;這碗湯不太好喝。&#39; },
+
+      { id: 12, word: &#39;まずい&#39;, ruby: &#39;まずい&#39;, kana: &#39;まずい&#39;, type: &#39;i&#39;, meaning: &#39;難吃的&#39;, neg: &#39;まずくないです&#39;, negKana: &#39;まずくないです&#39;, negAlt: &#39;常體：まずくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 11, exampleJp: &#39;自分で作った料理は&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;まずくないです&lt;/span&gt;。&#39;, examplePlain: &#39;自分で作った料理はまずくないです。&#39;, exampleZh: &#39;自己做的料理不難吃。&#39; },
+
+      { id: 13, word: &#39;難しい&#39;, ruby: &#39;&lt;ruby&gt;難&lt;rt&gt;むずか&lt;/rt&gt;&lt;/ruby&gt;しい&#39;, kana: &#39;むずかしい&#39;, type: &#39;i&#39;, meaning: &#39;困難的&#39;, neg: &#39;難しくないです&#39;, negKana: &#39;むずかしくないです&#39;, negAlt: &#39;常體：難しくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 14, exampleJp: &#39;ひらがなは&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;難しくないです&lt;/span&gt;。&#39;, examplePlain: &#39;ひらがなは難しくないです。&#39;, exampleZh: &#39;平假名不難。&#39; },
+
+      { id: 14, word: &#39;易しい&#39;, ruby: &#39;&lt;ruby&gt;易&lt;rt&gt;やさ&lt;/rt&gt;&lt;/ruby&gt;しい&#39;, kana: &#39;やさしい&#39;, type: &#39;i&#39;, meaning: &#39;簡單的&#39;, neg: &#39;易しくないです&#39;, negKana: &#39;やさしくないです&#39;, negAlt: &#39;常體：易しくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 13, exampleJp: &#39;N5の試験はぜんぜん&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;易しくないです&lt;/span&gt;。&#39;, examplePlain: &#39;N5の試験はぜんぜん易しくないです。&#39;, exampleZh: &#39;N5 考試一點也不簡單。&#39; },
+
+      { id: 15, word: &#39;楽しい&#39;, ruby: &#39;&lt;ruby&gt;楽&lt;rt&gt;たの&lt;/rt&gt;&lt;/ruby&gt;しい&#39;, kana: &#39;たのしい&#39;, type: &#39;i&#39;, meaning: &#39;快樂／有趣的&#39;, neg: &#39;楽しくないです&#39;, negKana: &#39;たのしくないです&#39;, negAlt: &#39;常體：楽しくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 16, exampleJp: &#39;宿題が多くて&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;楽しくないです&lt;/span&gt;。&#39;, examplePlain: &#39;宿題が多くて楽しくないです。&#39;, exampleZh: &#39;作業好多，一點都不開心。&#39; },
+
+      { id: 16, word: &#39;つまらない&#39;, ruby: &#39;つまらない&#39;, kana: &#39;つまらない&#39;, type: &#39;i&#39;, meaning: &#39;無聊的&#39;, neg: &#39;つまらなくないです&#39;, negKana: &#39;つまらなくないです&#39;, negAlt: &#39;常體：つまらなくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 15, exampleJp: &#39;その映画は&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;つまらなくないです&lt;/span&gt;。&#39;, examplePlain: &#39;その映画はつまらなくないです。&#39;, exampleZh: &#39;那部電影不無聊。&#39; },
+
+      { id: 17, word: &#39;忙しい&#39;, ruby: &#39;&lt;ruby&gt;忙&lt;rt&gt;いそが&lt;/rt&gt;&lt;/ruby&gt;しい&#39;, kana: &#39;いそがしい&#39;, type: &#39;i&#39;, meaning: &#39;忙碌的&#39;, neg: &#39;忙しくないです&#39;, negKana: &#39;いそがしくないです&#39;, negAlt: &#39;常體：忙しくない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 18, exampleJp: &#39;今週はあまり&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;忙しくないです&lt;/span&gt;。&#39;, examplePlain: &#39;今週はあまり忙しくないです。&#39;, exampleZh: &#39;這星期不太忙。&#39; },
+
+      { id: 18, word: &#39;暇&#39;, ruby: &#39;&lt;ruby&gt;暇&lt;rt&gt;ひま&lt;/rt&gt;&lt;/ruby&gt;（な）&#39;, kana: &#39;ひま&#39;, type: &#39;na&#39;, meaning: &#39;空閒的&#39;, neg: &#39;暇じゃないです&#39;, negKana: &#39;ひまじゃないです&#39;, negAlt: &#39;書面／更禮貌：暇ではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 17, exampleJp: &#39;明日の午後は&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;暇じゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;明日の午後は暇じゃないです。&#39;, exampleZh: &#39;明天下午沒空。&#39; },
+
+      { id: 19, word: &#39;静か&#39;, ruby: &#39;&lt;ruby&gt;静&lt;rt&gt;しず&lt;/rt&gt;&lt;/ruby&gt;か（な）&#39;, kana: &#39;しずか&#39;, type: &#39;na&#39;, meaning: &#39;安靜的&#39;, neg: &#39;静かじゃないです&#39;, negKana: &#39;しずかじゃないです&#39;, negAlt: &#39;書面／更禮貌：静かではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 20, exampleJp: &#39;駅の近くは&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;静かじゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;駅の近くは静かじゃないです。&#39;, exampleZh: &#39;車站附近不安靜。&#39; },
+
+      { id: 20, word: &#39;賑やか&#39;, ruby: &#39;&lt;ruby&gt;賑&lt;rt&gt;にぎ&lt;/rt&gt;&lt;/ruby&gt;やか（な）&#39;, kana: &#39;にぎやか&#39;, type: &#39;na&#39;, meaning: &#39;熱鬧的&#39;, neg: &#39;賑やかじゃないです&#39;, negKana: &#39;にぎやかじゃないです&#39;, negAlt: &#39;書面／更禮貌：賑やかではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 19, exampleJp: &#39;日曜日の夜、この町は&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;賑やかじゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;日曜日の夜、この町は賑やかじゃないです。&#39;, exampleZh: &#39;星期天晚上這個街區不熱鬧。&#39; },
+
+      { id: 21, word: &#39;好き&#39;, ruby: &#39;&lt;ruby&gt;好&lt;rt&gt;す&lt;/rt&gt;&lt;/ruby&gt;き（な）&#39;, kana: &#39;すき&#39;, type: &#39;na&#39;, meaning: &#39;喜歡的&#39;, neg: &#39;好きじゃないです&#39;, negKana: &#39;すきじゃないです&#39;, negAlt: &#39;書面／更禮貌：好きではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 22, exampleJp: &#39;私は納豆があまり&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;好きじゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;私は納豆があまり好きじゃないです。&#39;, exampleZh: &#39;我不太喜歡納豆。&#39; },
+
+      { id: 22, word: &#39;嫌い&#39;, ruby: &#39;&lt;ruby&gt;嫌&lt;rt&gt;きら&lt;/rt&gt;&lt;/ruby&gt;い（な）&#39;, kana: &#39;きらい&#39;, type: &#39;na&#39;, special: &#39;結尾是い但為な形容詞&#39;, meaning: &#39;討厭的&#39;, neg: &#39;嫌いじゃないです&#39;, negKana: &#39;きらいじゃないです&#39;, negAlt: &#39;書面／更禮貌：嫌いではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 21, exampleJp: &#39;ピーマンは&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;嫌いじゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;ピーマンは嫌いじゃないです。&#39;, exampleZh: &#39;我不討厭青椒。&#39; },
+
+      { id: 23, word: &#39;便利&#39;, ruby: &#39;&lt;ruby&gt;便利&lt;rt&gt;べんり&lt;/rt&gt;&lt;/ruby&gt;（な）&#39;, kana: &#39;べんり&#39;, type: &#39;na&#39;, meaning: &#39;方便的&#39;, neg: &#39;便利じゃないです&#39;, negKana: &#39;べんりじゃないです&#39;, negAlt: &#39;書面／更禮貌：便利ではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 24, exampleJp: &#39;このアプリはあまり&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;便利じゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;このアプリはあまり便利じゃないです。&#39;, exampleZh: &#39;這個 App 不太方便。&#39; },
+
+      { id: 24, word: &#39;不便&#39;, ruby: &#39;&lt;ruby&gt;不便&lt;rt&gt;ふべん&lt;/rt&gt;&lt;/ruby&gt;（な）&#39;, kana: &#39;ふべん&#39;, type: &#39;na&#39;, meaning: &#39;不方便的&#39;, neg: &#39;不便じゃないです&#39;, negKana: &#39;ふべんじゃないです&#39;, negAlt: &#39;書面／更禮貌：不便ではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 23, exampleJp: &#39;バスがあるから&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;不便じゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;バスがあるから不便じゃないです。&#39;, exampleZh: &#39;因為有公車，所以不覺得不方便。&#39; },
+
+      { id: 25, word: &#39;上手&#39;, ruby: &#39;&lt;ruby&gt;上手&lt;rt&gt;じょうず&lt;/rt&gt;&lt;/ruby&gt;（な）&#39;, kana: &#39;じょうず&#39;, type: &#39;na&#39;, meaning: &#39;擅長的&#39;, neg: &#39;上手じゃないです&#39;, negKana: &#39;じょうずじゃないです&#39;, negAlt: &#39;書面／更禮貌：上手ではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 26, exampleJp: &#39;私はまだ日本語が&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;上手じゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;私はまだ日本語が上手じゃないです。&#39;, exampleZh: &#39;我的日文還不太好。&#39; },
+
+      { id: 26, word: &#39;下手&#39;, ruby: &#39;&lt;ruby&gt;下手&lt;rt&gt;へた&lt;/rt&gt;&lt;/ruby&gt;（な）&#39;, kana: &#39;へた&#39;, type: &#39;na&#39;, meaning: &#39;不擅長的&#39;, neg: &#39;下手じゃないです&#39;, negKana: &#39;へたじゃないです&#39;, negAlt: &#39;書面／更禮貌：下手ではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 25, exampleJp: &#39;田中さんは歌が&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;下手じゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;田中さんは歌が下手じゃないです。&#39;, exampleZh: &#39;田中先生唱歌並不難聽。&#39; },
+
+      { id: 27, word: &#39;きれい&#39;, ruby: &#39;きれい（な）&#39;, kana: &#39;きれい&#39;, type: &#39;na&#39;, special: &#39;結尾是い但為な形容詞&#39;, meaning: &#39;漂亮／乾淨的&#39;, neg: &#39;きれいじゃないです&#39;, negKana: &#39;きれいじゃないです&#39;, negAlt: &#39;書面／更禮貌：きれいではありません&#39;, rule: &#39;詞幹 ＋ じゃないです&#39;, antonymId: 28, exampleJp: &#39;この川の水はあまり&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;きれいじゃないです&lt;/span&gt;。&#39;, examplePlain: &#39;この川の水はあまりきれいじゃないです。&#39;, exampleZh: &#39;這條河的水不太乾淨。&#39; },
+
+      { id: 28, word: &#39;汚い&#39;, ruby: &#39;&lt;ruby&gt;汚&lt;rt&gt;きたな&lt;/rt&gt;&lt;/ruby&gt;い&#39;, kana: &#39;きたない&#39;, type: &#39;i&#39;, meaning: &#39;髒的&#39;, neg: &#39;汚くないです&#39;, negKana: &#39;きたなくないです&#39;, negAlt: &#39;常體：汚くない&#39;, rule: &#39;去 い ＋ くないです&#39;, antonymId: 27, exampleJp: &#39;靴はそんなに&lt;span class=&quot;text-rose-600 font-bold&quot;&gt;汚くないです&lt;/span&gt;。&#39;, examplePlain: &#39;靴はそんなに汚くないです。&#39;, exampleZh: &#39;鞋子沒有那麼髒。&#39; }
+
+    ];
+
+
+
+    const byId = Object.fromEntries(ADJECTIVES.map(a =&gt; [a.id, a]));
+
+
+
+    // State
+
+    let state = {
+
+      activeTab: &#39;flashcards&#39;,
+
+      showFurigana: true,
+
+      filter: &#39;all&#39;,
+
+      deck: [...ADJECTIVES],
+
+      currentIndex: 0,
+
+      isFlipped: false,
+
+      masteredIds: new Set(),
+
+      reviewIds: new Set(),
+
+      // Antonyms
+
+      antonymView: &#39;list&#39;,
+
+      matchPairs: [],
+
+      matchLeftOrder: [],
+
+      matchRightOrder: [],
+
+      selectedLeftId: null,
+
+      matchedIds: new Set(),
+
+      matchAttempts: 0,
+
+      // Quiz
+
+      quizTypeFilter: &#39;all&#39;,
+
+      quizMode: &#39;choice&#39;,
+
+      quizShowTypeHint: true,
+
+      quizCurrent: null,
+
+      quizAnswered: false,
+
+      quizScore: 0,
+
+      quizTotal: 0,
+
+      quizStreak: 0
+
+    };
+
+
+
+    // Load saved progress safely
+
+    try {
+
+      const saved = localStorage.getItem(&#39;jp_adj_cards_v1&#39;);
+
+      if (saved) {
+
+        const parsed = JSON.parse(saved);
+
+        if (Array.isArray(parsed.mastered)) state.masteredIds = new Set(parsed.mastered);
+
+        if (Array.isArray(parsed.review)) state.reviewIds = new Set(parsed.review);
+
+      }
+
+    } catch (e) {}
+
+
+
+    function saveProgress() {
+
+      try {
+
+        localStorage.setItem(&#39;jp_adj_cards_v1&#39;, JSON.stringify({
+
+          mastered: [...state.masteredIds],
+
+          review: [...state.reviewIds]
+
+        }));
+
+      } catch (e) {}
+
+    }
+
+
+
+    let jpVoices = [];
+
+
+
+    function scoreJapaneseVoice(v) {
+
+      const name = (v.name || &#39;&#39;).toLowerCase();
+
+      let score = 0;
+
+      if (name.includes(&#39;natural&#39;) || name.includes(&#39;neural&#39;)) score += 100;
+
+      if (name.includes(&#39;nanami&#39;) || name.includes(&#39;keita&#39;)) score += 50;
+
+      if (name.includes(&#39;google&#39;)) score += 45;
+
+      if (name.includes(&#39;siri&#39;) || name.includes(&#39;enhanced&#39;) || name.includes(&#39;premium&#39;)) score += 40;
+
+      if (name.includes(&#39;kyoko&#39;) || name.includes(&#39;otoya&#39;) || name.includes(&#39;hattori&#39;) || name.includes(&#39;o-ren&#39;)) score += 30;
+
+      if (name.includes(&#39;online&#39;)) score += 20;
+
+      if (v.default) score += 5;
+
+      return score;
+
+    }
+
+
+
+    function loadJapaneseVoices() {
+
+      if (!(&#39;speechSynthesis&#39; in window)) return;
+
+      try {
+
+        const all = window.speechSynthesis.getVoices() || [];
+
+        jpVoices = all
+
+          .filter(v =&gt; (v.lang || &#39;&#39;).toLowerCase().startsWith(&#39;ja&#39;))
+
+          .sort((a, b) =&gt; scoreJapaneseVoice(b) - scoreJapaneseVoice(a));
+
+      } catch (e) {}
+
+    }
+
+
+
+    if (&#39;speechSynthesis&#39; in window) {
+
+      loadJapaneseVoices();
+
+      if (typeof window.speechSynthesis.addEventListener === &#39;function&#39;) {
+
+        window.speechSynthesis.addEventListener(&#39;voiceschanged&#39;, loadJapaneseVoices);
+
+      } else {
+
+        window.speechSynthesis.onvoiceschanged = loadJapaneseVoices;
+
+      }
+
+    }
+
+
+
+    function showAudioHint(msg) {
+
+      let toast = document.getElementById(&#39;audio-toast&#39;);
+
+      if (!toast) {
+
+        toast = document.createElement(&#39;div&#39;);
+
+        toast.id = &#39;audio-toast&#39;;
+
+        toast.className = &#39;fixed bottom-4 left-1/2 -translate-x-1/2 z-50 px-4 py-2.5 rounded-xl bg-[#111827] text-white text-xs sm:text-sm font-black border-2 border-white shadow-lg transition-opacity duration-300&#39;;
+
+        document.body.appendChild(toast);
+
+      }
+
+      toast.textContent = msg;
+
+      toast.style.opacity = &#39;1&#39;;
+
+      clearTimeout(toast._hideTimer);
+
+      toast._hideTimer = setTimeout(() =&gt; { toast.style.opacity = &#39;0&#39;; }, 3500);
+
+    }
+
+
+
+    function speakJP(text) {
+
+      if (!text) return;
+
+      if (!(&#39;speechSynthesis&#39; in window)) {
+
+        showAudioHint(&#39;🔇 目前瀏覽器不支援語音朗讀，請改用 Chrome / Edge / Safari 開啟&#39;);
+
+        return;
+
+      }
+
+      try {
+
+        if (window.speechSynthesis.paused) {
+
+          window.speechSynthesis.resume();
+
+        }
+
+        window.speechSynthesis.cancel();
+
+        if (jpVoices.length === 0) loadJapaneseVoices();
+
+
+
+        const utter = new SpeechSynthesisUtterance(text);
+
+        utter.lang = &#39;ja-JP&#39;;
+
+        const bestVoice = jpVoices[0];
+
+        if (bestVoice) utter.voice = bestVoice;
+
+        utter.pitch = 1.0;
+
+        utter.rate = 0.95;
+
+
+
+        let started = false;
+
+        utter.onstart = () =&gt; { started = true; };
+
+        utter.onerror = () =&gt; {
+
+          if (started) return;
+
+          try {
+
+            const fallback = new SpeechSynthesisUtterance(text);
+
+            fallback.lang = &#39;ja-JP&#39;;
+
+            const localVoice = jpVoices.find(v =&gt; v.localService);
+
+            if (localVoice) fallback.voice = localVoice;
+
+            fallback.rate = 0.95;
+
+            fallback.onstart = () =&gt; { started = true; };
+
+            window.speechSynthesis.speak(fallback);
+
+          } catch (e2) {}
+
+        };
+
+
+
+        window.speechSynthesis.speak(utter);
+
+
+
+        setTimeout(() =&gt; {
+
+          if (!started &amp;&amp; !window.speechSynthesis.speaking) {
+
+            try {
+
+              const retry = new SpeechSynthesisUtterance(text);
+
+              retry.lang = &#39;ja-JP&#39;;
+
+              retry.rate = 0.95;
+
+              retry.onstart = () =&gt; { started = true; };
+
+              window.speechSynthesis.speak(retry);
+
+              setTimeout(() =&gt; {
+
+                if (!started &amp;&amp; !window.speechSynthesis.speaking) {
+
+                  showAudioHint(&#39;🔇 預覽視窗可能受系統靜音限制，請下載檔案用瀏覽器開啟即可發聲&#39;);
+
+                }
+
+              }, 350);
+
+            } catch (e3) {}
+
+          }
+
+        }, 350);
+
+      } catch (e) {
+
+        showAudioHint(&#39;🔇 語音播放失敗，請下載檔案用瀏覽器開啟&#39;);
+
+      }
+
+    }
+
+
+
+    function shuffleArray(arr) {
+
+      const copy = [...arr];
+
+      for (let i = copy.length - 1; i &gt; 0; i--) {
+
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [copy[i], copy[j]] = [copy[j], copy[i]];
+
+      }
+
+      return copy;
+
+    }
+
+
+
+    // Header &amp; Furigana
+
+    function updateHeaderStats() {
+
+      document.getElementById(&#39;mastered-count&#39;).textContent = state.masteredIds.size;
+
+      document.getElementById(&#39;review-filter-count&#39;).textContent = state.reviewIds.size;
+
+      const indicator = document.getElementById(&#39;furigana-indicator&#39;);
+
+      if (state.showFurigana) {
+
+        document.body.classList.remove(&#39;hide-furigana&#39;);
+
+        indicator.className = &#39;w-2 h-2 rounded-full bg-emerald-500&#39;;
+
+      } else {
+
+        document.body.classList.add(&#39;hide-furigana&#39;);
+
+        indicator.className = &#39;w-2 h-2 rounded-full bg-slate-300&#39;;
+
+      }
+
+    }
+
+
+
+    document.getElementById(&#39;toggle-furigana-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+
+      state.showFurigana = !state.showFurigana;
+
+      updateHeaderStats();
+
+    });
+
+
+
+    // Tabs
+
+    document.querySelectorAll(&#39;.tab-btn&#39;).forEach(btn =&gt; {
+
+      btn.addEventListener(&#39;click&#39;, () =&gt; {
+
+        const tab = btn.dataset.tab;
+
+        state.activeTab = tab;
+
+        document.querySelectorAll(&#39;.tab-btn&#39;).forEach(b =&gt; {
+
+          if (b.dataset.tab === tab) {
+
+            b.className = &#39;tab-btn h-11 px-3 rounded-xl text-sm sm:text-base font-black transition bg-[#111827] text-white&#39;;
+
+          } else {
+
+            b.className = &#39;tab-btn h-11 px-3 rounded-xl text-sm sm:text-base font-black transition text-[#111827] hover:bg-gray-100&#39;;
+
+          }
+
+        });
+
+        document.querySelectorAll(&#39;.tab-panel&#39;).forEach(p =&gt; p.classList.add(&#39;hidden&#39;));
+
+        document.getElementById(`tab-${tab}`).classList.remove(&#39;hidden&#39;);
+
+
+
+        if (tab === &#39;quiz&#39; &amp;&amp; !state.quizCurrent) {
+
+          generateQuizQuestion();
+
+        }
+
+      });
+
+    });
+
+
+
+    // ================= TAB 1: FLASHCARDS =================
+
+    function applyFilter(filterName, keepShuffle = false) {
+
+      state.filter = filterName;
+
+      let list = ADJECTIVES;
+
+      if (filterName === &#39;i&#39;) list = ADJECTIVES.filter(a =&gt; a.type === &#39;i&#39;);
+
+      else if (filterName === &#39;na&#39;) list = ADJECTIVES.filter(a =&gt; a.type === &#39;na&#39;);
+
+      else if (filterName === &#39;review&#39;) list = ADJECTIVES.filter(a =&gt; state.reviewIds.has(a.id));
+
+
+
+      state.deck = keepShuffle ? shuffleArray(list) : [...list];
+
+      state.currentIndex = 0;
+
+      state.isFlipped = false;
+
+
+
+      document.querySelectorAll(&#39;.filter-btn&#39;).forEach(btn =&gt; {
+
+        if (btn.dataset.filter === filterName) {
+
+          btn.className = &#39;filter-btn h-10 px-3.5 rounded-xl text-xs sm:text-sm font-black bg-[#111827] text-white border-2 border-[#111827] transition&#39;;
+
+        } else {
+
+          btn.className = &#39;filter-btn h-10 px-3.5 rounded-xl text-xs sm:text-sm font-black bg-white text-[#111827] border-2 border-[#111827] hover:bg-gray-100 transition&#39;;
+
+        }
+
+      });
+
+
+
+      renderFlashcard();
+
+    }
+
+
+
+    function renderFlashcard() {
+
+      updateHeaderStats();
+
+      const emptyEl = document.getElementById(&#39;flashcard-empty&#39;);
+
+      const stageEl = document.getElementById(&#39;flashcard-stage&#39;);
+
+      const controlsEl = document.getElementById(&#39;flashcard-controls&#39;);
+
+
+
+      if (state.deck.length === 0) {
+
+        emptyEl.classList.remove(&#39;hidden&#39;);
+
+        stageEl.classList.add(&#39;hidden&#39;);
+
+        controlsEl.classList.add(&#39;hidden&#39;);
+
+        document.getElementById(&#39;card-position-text&#39;).textContent = &#39;第 0 / 0 張&#39;;
+
+        document.getElementById(&#39;card-progress-bar&#39;).style.width = &#39;0%&#39;;
+
+        return;
+
+      }
+
+
+
+      emptyEl.classList.add(&#39;hidden&#39;);
+
+      stageEl.classList.remove(&#39;hidden&#39;);
+
+      controlsEl.classList.remove(&#39;hidden&#39;);
+
+
+
+      if (state.currentIndex &gt;= state.deck.length) state.currentIndex = 0;
+
+      const item = state.deck[state.currentIndex];
+
+      const ant = byId[item.antonymId];
+
+
+
+      const inner = document.getElementById(&#39;flip-card-inner&#39;);
+
+      inner.classList.toggle(&#39;is-flipped&#39;, state.isFlipped);
+
+
+
+      document.getElementById(&#39;card-position-text&#39;).textContent = `第 ${state.currentIndex + 1} / ${state.deck.length} 張`;
+
+      document.getElementById(&#39;card-progress-bar&#39;).style.width = `${((state.currentIndex + 1) / state.deck.length) * 100}%`;
+
+
+
+      const typeBadge = document.getElementById(&#39;card-type-badge&#39;);
+
+      if (item.type === &#39;i&#39;) {
+
+        typeBadge.textContent = &#39;い形容詞&#39;;
+
+        typeBadge.className = &#39;px-4 py-1.5 rounded-lg text-sm sm:text-base font-black bg-[#2563EB] text-white&#39;;
+
+      } else {
+
+        typeBadge.textContent = &#39;な形容詞&#39;;
+
+        typeBadge.className = &#39;px-4 py-1.5 rounded-lg text-sm sm:text-base font-black bg-[#16A34A] text-white&#39;;
+
+      }
+
+
+
+      const specialBadge = document.getElementById(&#39;card-special-badge&#39;);
+
+      if (item.special) {
+
+        specialBadge.textContent = item.special;
+
+        specialBadge.classList.remove(&#39;hidden&#39;);
+
+      } else {
+
+        specialBadge.classList.add(&#39;hidden&#39;);
+
+      }
+
+
+
+      const frontWordEl = document.getElementById(&#39;card-front-word&#39;);
+
+      frontWordEl.innerHTML = item.ruby;
+
+      const charCount = Math.max(item.word.length, 2);
+
+      const cqwSize = Math.max(12, Math.min(24, Math.round(70 / charCount)));
+
+      frontWordEl.style.fontSize = `clamp(3.75rem, ${cqwSize}cqw, 6.75rem)`;
+
+      document.getElementById(&#39;card-front-kana&#39;).textContent = item.kana;
+
+      document.getElementById(&#39;card-front-meaning&#39;).textContent = item.meaning;
+
+
+
+      const statusLabel = document.getElementById(&#39;card-status-label&#39;);
+
+      if (state.masteredIds.has(item.id)) {
+
+        statusLabel.textContent = &#39;✓ 已記熟&#39;;
+
+        statusLabel.className = &#39;px-3 py-1 rounded-lg text-sm font-black bg-[#15803D] text-white border-2 border-[#111827]&#39;;
+
+      } else if (state.reviewIds.has(item.id)) {
+
+        statusLabel.textContent = &#39;↺ 待複習&#39;;
+
+        statusLabel.className = &#39;px-3 py-1 rounded-lg text-sm font-black bg-[#F97316] text-[#111827] border-2 border-[#111827]&#39;;
+
+      } else {
+
+        statusLabel.textContent = &#39;尚未標記&#39;;
+
+        statusLabel.className = &#39;px-3 py-1 rounded-lg text-sm font-black bg-white text-[#111827] border-2 border-[#111827]&#39;;
+
+      }
+
+
+
+      // Back
+
+      document.getElementById(&#39;card-back-word&#39;).textContent = item.word;
+
+      document.getElementById(&#39;card-back-meaning&#39;).textContent = `（${item.meaning}）`;
+
+      document.getElementById(&#39;card-neg-rule&#39;).textContent = item.rule;
+
+      document.getElementById(&#39;card-neg-form&#39;).textContent = item.neg;
+
+      document.getElementById(&#39;card-neg-alt&#39;).textContent = item.negAlt;
+
+      document.getElementById(&#39;card-antonym-word&#39;).textContent = `${ant.word}（${ant.kana}）`;
+
+      document.getElementById(&#39;card-antonym-meaning&#39;).textContent = ant.meaning;
+
+      document.getElementById(&#39;card-example-jp&#39;).innerHTML = item.exampleJp;
+
+      document.getElementById(&#39;card-example-zh&#39;).textContent = item.exampleZh;
+
+    }
+
+
+
+    document.getElementById(&#39;flip-card-inner&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+
+      if (e.target.closest(&#39;button&#39;)) return;
+
+      state.isFlipped = !state.isFlipped;
+
+      document.getElementById(&#39;flip-card-inner&#39;).classList.toggle(&#39;is-flipped&#39;, state.isFlipped);
+
+    });
+
+
+
+    document.getElementById(&#39;flip-card-inner&#39;).addEventListener(&#39;keydown&#39;, (e) =&gt; {
+
+      if (e.key === &#39; &#39; || e.key === &#39;Enter&#39;) {
+
+        e.preventDefault();
+
+        state.isFlipped = !state.isFlipped;
+
+        document.getElementById(&#39;flip-card-inner&#39;).classList.toggle(&#39;is-flipped&#39;, state.isFlipped);
+
+      }
+
+    });
+
+
+
+    document.getElementById(&#39;speak-front-btn&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+
+      e.stopPropagation();
+
+      const item = state.deck[state.currentIndex];
+
+      if (!item) return;
+
+      speakJP(state.isFlipped ? item.examplePlain : item.kana);
+
+    });
+
+
+
+    document.getElementById(&#39;speak-back-btn&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+
+      e.stopPropagation();
+
+      const item = state.deck[state.currentIndex];
+
+      if (item) speakJP(item.examplePlain);
+
+    });
+
+
+
+    document.getElementById(&#39;speak-antonym-btn&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+
+      e.stopPropagation();
+
+      const item = state.deck[state.currentIndex];
+
+      if (!item) return;
+
+      const ant = byId[item.antonymId];
+
+      if (ant) speakJP(ant.kana);
+
+    });
+
+
+
+    document.getElementById(&#39;prev-card-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+
+      if (state.deck.length === 0) return;
+
+      state.currentIndex = (state.currentIndex - 1 + state.deck.length) % state.deck.length;
+
+      state.isFlipped = false;
+
+      renderFlashcard();
+
+    });
+
+
+
+    document.getElementById(&#39;next-card-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+
+      if (state.deck.length === 0) return;
+
+      state.currentIndex = (state.currentIndex + 1) % state.deck.length;
+
+      state.isFlipped = false;
+
+      renderFlashcard();
+
+    });
+
+
+
+    document.getElementById(&#39;mark-mastered-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+
+      const item = state.deck[state.currentIndex];
+
+      if (!item) return;
+
+      state.masteredIds.add(item.id);
+
+      state.reviewIds.delete(item.id);
+
+      saveProgress();
+
+      if (state.filter === &#39;review&#39;) {
+
+        applyFilter(&#39;review&#39;);
+
+      } else {
+
+        state.currentIndex = (state.currentIndex + 1) % state.deck.length;
+
+        state.isFlipped = false;
+
+        renderFlashcard();
+
+      }
+
+    });
+
+
+
+    document.getElementById(&#39;mark-review-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+
+      const item = state.deck[state.currentIndex];
+
+      if (!item) return;
+
+      state.reviewIds.add(item.id);
+
+      state.masteredIds.delete(item.id);
+
+      saveProgress();
+
+      state.currentIndex = (state.currentIndex + 1) % state.deck.length;
+
+      state.isFlipped = false;
+
+      renderFlashcard();
+
+    });
+
+
+
+    document.querySelectorAll(&#39;.filter-btn&#39;).forEach(btn =&gt; {
+
+      btn.addEventListener(&#39;click&#39;, () =&gt; applyFilter(btn.dataset.filter));
+
+    });
+
+
+
+    document.getElementById(&#39;reset-filter-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; applyFilter(&#39;all&#39;));
+
+    document.getElementById(&#39;shuffle-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; applyFilter(state.filter, true));
+
+
+
+    // ================= TAB 2: ANTONYMS =================
+
+    function renderAntonymList() {
+
+      const container = document.getElementById(&#39;antonym-list-view&#39;);
+
+      const pairs = [];
+
+      const seen = new Set();
+
+      for (const a of ADJECTIVES) {
+
+        if (!seen.has(a.id)) {
+
+          seen.add(a.id);
+
+          seen.add(a.antonymId);
+
+          pairs.push([a, byId[a.antonymId]]);
+
+        }
+
+      }
+
+
+
+      container.innerHTML = pairs.map(([a, b]) =&gt; {
+
+        const badgeA = a.type === &#39;i&#39; ? &#39;bg-[#2563EB] text-white&#39; : &#39;bg-[#16A34A] text-white&#39;;
+
+        const badgeB = b.type === &#39;i&#39; ? &#39;bg-[#2563EB] text-white&#39; : &#39;bg-[#16A34A] text-white&#39;;
+
+        return `
+
+          &lt;div class=&quot;bg-white rounded-2xl border-4 border-[#111827] p-4 sm:p-5 flex items-center justify-between gap-3&quot;&gt;
+
+            &lt;button type=&quot;button&quot; data-speak=&quot;${a.kana}&quot; class=&quot;speak-word-btn flex-1 text-left p-2.5 rounded-xl hover:bg-blue-50 active:scale-95 transition&quot;&gt;
+
+              &lt;div class=&quot;flex items-center justify-between gap-2 mb-1.5&quot;&gt;
+
+                &lt;span class=&quot;px-2.5 py-0.5 rounded-md text-xs font-black ${badgeA}&quot;&gt;${a.type === &#39;i&#39; ? &#39;い形容詞&#39; : &#39;な形容詞&#39;}&lt;/span&gt;
+
+                &lt;span class=&quot;text-2xl leading-none&quot;&gt;🔊&lt;/span&gt;
+
+              &lt;/div&gt;
+
+              &lt;div class=&quot;jp-text font-black text-[#111827] text-2xl sm:text-3xl leading-snug&quot;&gt;${a.ruby}&lt;/div&gt;
+
+              &lt;div class=&quot;text-base sm:text-lg font-black text-[#1E3A8A] mt-1&quot;&gt;${a.meaning}&lt;/div&gt;
+
+            &lt;/button&gt;
+
+            &lt;div class=&quot;text-[#111827] font-black text-2xl sm:text-3xl px-1&quot;&gt;↔&lt;/div&gt;
+
+            &lt;button type=&quot;button&quot; data-speak=&quot;${b.kana}&quot; class=&quot;speak-word-btn flex-1 text-right p-2.5 rounded-xl hover:bg-blue-50 active:scale-95 transition&quot;&gt;
+
+              &lt;div class=&quot;flex items-center justify-between gap-2 mb-1.5&quot;&gt;
+
+                &lt;span class=&quot;text-2xl leading-none&quot;&gt;🔊&lt;/span&gt;
+
+                &lt;span class=&quot;px-2.5 py-0.5 rounded-md text-xs font-black ${badgeB}&quot;&gt;${b.type === &#39;i&#39; ? &#39;い形容詞&#39; : &#39;な形容詞&#39;}&lt;/span&gt;
+
+              &lt;/div&gt;
+
+              &lt;div class=&quot;jp-text font-black text-[#111827] text-2xl sm:text-3xl leading-snug&quot;&gt;${b.ruby}&lt;/div&gt;
+
+              &lt;div class=&quot;text-base sm:text-lg font-black text-[#1E3A8A] mt-1&quot;&gt;${b.meaning}&lt;/div&gt;
+
+            &lt;/button&gt;
+
+          &lt;/div&gt;
+
+        `;
+
+      }).join(&#39;&#39;);
+
+    }
+
+
+
+    document.getElementById(&#39;antonym-list-view&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+
+      const btn = e.target.closest(&#39;.speak-word-btn&#39;);
+
+      if (btn) speakJP(btn.dataset.speak);
+
+    });
+
+
+
+    function initMatchGame() {
+
+      const allPairs = [];
+
+      const seen = new Set();
+
+      for (const a of ADJECTIVES) {
+
+        if (!seen.has(a.id)) {
+
+          seen.add(a.id);
+
+          seen.add(a.antonymId);
+
+          allPairs.push([a, byId[a.antonymId]]);
+
+        }
+
+      }
+
+      const chosen = shuffleArray(allPairs).slice(0, 5);
+
+      state.matchPairs = chosen;
+
+      state.matchLeftOrder = shuffleArray(chosen.map(p =&gt; p[0]));
+
+      state.matchRightOrder = shuffleArray(chosen.map(p =&gt; p[1]));
+
+      state.selectedLeftId = null;
+
+      state.matchedIds = new Set();
+
+      state.matchAttempts = 0;
+
+
+
+      const fb = document.getElementById(&#39;match-feedback&#39;);
+
+      fb.classList.add(&#39;hidden&#39;);
+
+      renderMatchGame();
+
+    }
+
+
+
+    function renderMatchGame() {
+
+      document.getElementById(&#39;match-progress&#39;).textContent = state.matchedIds.size;
+
+      document.getElementById(&#39;match-attempts&#39;).textContent = state.matchAttempts;
+
+
+
+      const leftCol = document.getElementById(&#39;match-left-col&#39;);
+
+      const rightCol = document.getElementById(&#39;match-right-col&#39;);
+
+
+
+      leftCol.innerHTML = state.matchLeftOrder.map(item =&gt; {
+
+        const isMatched = state.matchedIds.has(item.id);
+
+        const isSelected = state.selectedLeftId === item.id;
+
+        let cls = &#39;bg-white border-[#111827] hover:bg-blue-50 text-[#111827] shadow-[0_4px_0_#111827]&#39;;
+
+        let meaningCls = &#39;text-[#1E3A8A]&#39;;
+
+        if (isMatched) { cls = &#39;bg-[#15803D] border-[#111827] text-white cursor-default&#39;; meaningCls = &#39;text-white&#39;; }
+
+        else if (isSelected) { cls = &#39;bg-[#1D4ED8] border-[#111827] text-white -translate-y-0.5 shadow-[0_6px_0_#111827]&#39;; meaningCls = &#39;text-white&#39;; }
+
+
+
+        return `
+
+          &lt;button type=&quot;button&quot; data-side=&quot;left&quot; data-id=&quot;${item.id}&quot; ${isMatched ? &#39;disabled&#39; : &#39;&#39;} class=&quot;match-card-btn w-full text-left p-4 rounded-2xl border-4 transition ${cls}&quot;&gt;
+
+            &lt;div class=&quot;jp-text font-black text-2xl sm:text-3xl&quot;&gt;${item.ruby}&lt;/div&gt;
+
+            &lt;div class=&quot;text-base font-black ${meaningCls} mt-1&quot;&gt;${item.meaning}&lt;/div&gt;
+
+          &lt;/button&gt;
+
+        `;
+
+      }).join(&#39;&#39;);
+
+
+
+      rightCol.innerHTML = state.matchRightOrder.map(item =&gt; {
+
+        const isMatched = state.matchedIds.has(item.antonymId);
+
+        let cls = &#39;bg-white border-[#111827] hover:bg-blue-50 text-[#111827] shadow-[0_4px_0_#111827]&#39;;
+
+        let meaningCls = &#39;text-[#1E3A8A]&#39;;
+
+        if (isMatched) { cls = &#39;bg-[#15803D] border-[#111827] text-white cursor-default&#39;; meaningCls = &#39;text-white&#39;; }
+
+
+
+        return `
+
+          &lt;button type=&quot;button&quot; data-side=&quot;right&quot; data-id=&quot;${item.id}&quot; ${isMatched ? &#39;disabled&#39; : &#39;&#39;} class=&quot;match-card-btn w-full text-left p-4 rounded-2xl border-4 transition ${cls}&quot;&gt;
+
+            &lt;div class=&quot;jp-text font-black text-2xl sm:text-3xl&quot;&gt;${item.ruby}&lt;/div&gt;
+
+            &lt;div class=&quot;text-base font-black ${meaningCls} mt-1&quot;&gt;${item.meaning}&lt;/div&gt;
+
+          &lt;/button&gt;
+
+        `;
+
+      }).join(&#39;&#39;);
+
+    }
+
+
+
+    document.getElementById(&#39;antonym-game-view&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+
+      const btn = e.target.closest(&#39;.match-card-btn&#39;);
+
+      if (!btn || btn.disabled) return;
+
+      const side = btn.dataset.side;
+
+      const id = Number(btn.dataset.id);
+
+
+
+      if (side === &#39;left&#39;) {
+
+        state.selectedLeftId = id;
+
+        renderMatchGame();
+
+      } else if (side === &#39;right&#39;) {
+
+        if (state.selectedLeftId === null) {
+
+          const fb = document.getElementById(&#39;match-feedback&#39;);
+
+          fb.textContent = &#39;請先點選左欄的單字！&#39;;
+
+          fb.className = &#39;rounded-xl px-4 py-2.5 text-sm font-medium bg-amber-50 text-amber-800 border border-amber-200&#39;;
+
+          return;
+
+        }
+
+        state.matchAttempts++;
+
+        const leftItem = byId[state.selectedLeftId];
+
+        const fb = document.getElementById(&#39;match-feedback&#39;);
+
+        if (leftItem.antonymId === id) {
+
+          state.matchedIds.add(leftItem.id);
+
+          state.selectedLeftId = null;
+
+          speakJP(byId[id].kana);
+
+          if (state.matchedIds.size === 5) {
+
+            fb.textContent = `🎉 全部配對成功！共嘗試 ${state.matchAttempts} 次，點擊「換一組題目」可再挑戰。`;
+
+            fb.className = &#39;rounded-xl px-4 py-2.5 text-sm font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200&#39;;
+
+          } else {
+
+            fb.textContent = `✓ 配對正確！${leftItem.word}（${leftItem.meaning}）↔ ${byId[id].word}（${byId[id].meaning}）`;
+
+            fb.className = &#39;rounded-xl px-4 py-2.5 text-sm font-medium bg-emerald-50 text-emerald-700 border border-emerald-200&#39;;
+
+          }
+
+        } else {
+
+          fb.textContent = `✕ 這兩個不是反義詞喔，再試試看！`;
+
+          fb.className = &#39;rounded-xl px-4 py-2.5 text-sm font-medium bg-rose-50 text-rose-700 border border-rose-200&#39;;
+
+          state.selectedLeftId = null;
+
+        }
+
+        renderMatchGame();
+
+      }
+
+    });
+
+
+
+    document.getElementById(&#39;antonym-view-list-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+
+      state.antonymView = &#39;list&#39;;
+
+      document.getElementById(&#39;antonym-view-list-btn&#39;).className = &#39;h-10 px-4 rounded-xl text-sm font-black bg-[#2563EB] text-white border-2 border-[#111827] transition&#39;;
+
+      document.getElementById(&#39;antonym-view-game-btn&#39;).className = &#39;h-10 px-4 rounded-xl text-sm font-black bg-white text-[#111827] border-2 border-[#111827] hover:bg-gray-100 transition&#39;;
+
+      document.getElementById(&#39;antonym-list-view&#39;).classList.remove(&#39;hidden&#39;);
+
+      document.getElementById(&#39;antonym-game-view&#39;).classList.add(&#39;hidden&#39;);
+
+    });
+
+
+
+    document.getElementById(&#39;antonym-view-game-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+
+      state.antonymView = &#39;game&#39;;
+
+      document.getElementById(&#39;antonym-view-game-btn&#39;).className = &#39;h-10 px-4 rounded-xl text-sm font-black bg-[#2563EB] text-white border-2 border-[#111827] transition&#39;;
+
+      document.getElementById(&#39;antonym-view-list-btn&#39;).className = &#39;h-10 px-4 rounded-xl text-sm font-black bg-white text-[#111827] border-2 border-[#111827] hover:bg-gray-100 transition&#39;;
+
+      document.getElementById(&#39;antonym-list-view&#39;).classList.add(&#39;hidden&#39;);
+
+      document.getElementById(&#39;antonym-game-view&#39;).classList.remove(&#39;hidden&#39;);
+
+      if (state.matchPairs.length === 0) initMatchGame();
+
+    });
+
+
+
+    document.getElementById(&#39;new-match-game-btn&#39;).addEventListener(&#39;click&#39;, initMatchGame);
+
+
+
+    // ================= TAB 3: CONJUGATION QUIZ =================
+
+    document.getElementById(&#39;toggle-grammar-btn&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+
+      const panel = document.getElementById(&#39;grammar-panel&#39;);
+
+      const chev = document.getElementById(&#39;grammar-chevron&#39;);
+
+      const isHidden = panel.classList.toggle(&#39;hidden&#39;);
+
+      chev.textContent = isHidden ? &#39;展開規則 ▼&#39; : &#39;收合規則 ▲&#39;;
+
+    });
+
+
+
+    function buildDistractors(item) {
+
+      const correct = item.neg;
+
+      const distractors = new Set();
+
+      if (item.type === &#39;i&#39;) {
+
+        if (item.word === &#39;いい&#39;) {
+
+          distractors.add(&#39;いくないです&#39;);
+
+          distractors.add(&#39;いいじゃないです&#39;);
+
+          distractors.add(&#39;いいくないです&#39;);
+
+        } else {
+
+          const stem = item.word.slice(0, -1);
+
+          distractors.add(item.word + &#39;じゃないです&#39;);
+
+          distractors.add(item.word + &#39;くないです&#39;);
+
+          distractors.add(stem + &#39;じゃないです&#39;);
+
+        }
+
+      } else {
+
+        distractors.add(item.word + &#39;くないです&#39;);
+
+        if (item.word.endsWith(&#39;い&#39;)) {
+
+          distractors.add(item.word.slice(0, -1) + &#39;くないです&#39;);
+
+        } else {
+
+          distractors.add(item.word + &#39;なくないです&#39;);
+
+        }
+
+        distractors.add(item.word + &#39;ではありませんでした&#39;);
+
+      }
+
+      const list = [...distractors].filter(d =&gt; d !== correct).slice(0, 3);
+
+      return shuffleArray([correct, ...list]);
+
+    }
+
+
+
+    function generateQuizQuestion() {
+
+      let pool = ADJECTIVES;
+
+      if (state.quizTypeFilter === &#39;i&#39;) pool = ADJECTIVES.filter(a =&gt; a.type === &#39;i&#39;);
+
+      else if (state.quizTypeFilter === &#39;na&#39;) pool = ADJECTIVES.filter(a =&gt; a.type === &#39;na&#39;);
+
+
+
+      const next = pool[Math.floor(Math.random() * pool.length)];
+
+      state.quizCurrent = next;
+
+      state.quizAnswered = false;
+
+
+
+      document.getElementById(&#39;quiz-prompt-word&#39;).innerHTML = next.ruby;
+
+      document.getElementById(&#39;quiz-prompt-meaning&#39;).textContent = next.meaning;
+
+
+
+      const badge = document.getElementById(&#39;quiz-type-badge&#39;);
+
+      if (state.quizShowTypeHint) {
+
+        badge.classList.remove(&#39;hidden&#39;);
+
+        badge.textContent = next.type === &#39;i&#39; ? &#39;い形容詞&#39; : &#39;な形容詞&#39;;
+
+        badge.className = next.type === &#39;i&#39;
+
+          ? &#39;px-2 py-0.5 rounded text-xs font-bold bg-indigo-50 text-indigo-700&#39;
+
+          : &#39;px-2 py-0.5 rounded text-xs font-bold bg-teal-50 text-teal-700&#39;;
+
+      } else {
+
+        badge.classList.add(&#39;hidden&#39;);
+
+      }
+
+
+
+      document.getElementById(&#39;quiz-feedback&#39;).classList.add(&#39;hidden&#39;);
+
+      document.getElementById(&#39;next-quiz-btn&#39;).classList.add(&#39;hidden&#39;);
+
+
+
+      const choicesEl = document.getElementById(&#39;quiz-choices-container&#39;);
+
+      const typingEl = document.getElementById(&#39;quiz-typing-container&#39;);
+
+
+
+      if (state.quizMode === &#39;choice&#39;) {
+
+        choicesEl.classList.remove(&#39;hidden&#39;);
+
+        typingEl.classList.add(&#39;hidden&#39;);
+
+        const options = buildDistractors(next);
+
+        choicesEl.innerHTML = options.map(opt =&gt; `
+
+          &lt;button type=&quot;button&quot; data-option=&quot;${opt}&quot; class=&quot;quiz-choice-btn jp-text min-h-[68px] px-4 py-3 rounded-2xl border-4 border-[#111827] bg-white hover:bg-blue-50 active:scale-95 text-xl sm:text-2xl font-black text-[#111827] transition text-center&quot;&gt;
+
+            ${opt}
+
+          &lt;/button&gt;
+
+        `).join(&#39;&#39;);
+
+      } else {
+
+        choicesEl.classList.add(&#39;hidden&#39;);
+
+        typingEl.classList.remove(&#39;hidden&#39;);
+
+        const input = document.getElementById(&#39;quiz-typing-input&#39;);
+
+        input.value = &#39;&#39;;
+
+        input.disabled = false;
+
+        document.getElementById(&#39;quiz-submit-typing-btn&#39;).disabled = false;
+
+        input.focus();
+
+      }
+
+    }
+
+
+
+    function showQuizResult(isCorrect, userAnswer) {
+
+      state.quizAnswered = true;
+
+      state.quizTotal++;
+
+      if (isCorrect) {
+
+        state.quizScore++;
+
+        state.quizStreak++;
+
+        speakJP(state.quizCurrent.negKana);
+
+      } else {
+
+        state.quizStreak = 0;
+
+      }
+
+
+
+      document.getElementById(&#39;quiz-score&#39;).textContent = state.quizScore;
+
+      document.getElementById(&#39;quiz-total&#39;).textContent = state.quizTotal;
+
+      document.getElementById(&#39;quiz-streak&#39;).textContent = state.quizStreak;
+
+
+
+      const fb = document.getElementById(&#39;quiz-feedback&#39;);
+
+      const fbTitle = document.getElementById(&#39;quiz-feedback-title&#39;);
+
+      const fbDetail = document.getElementById(&#39;quiz-feedback-detail&#39;);
+
+      fb.classList.remove(&#39;hidden&#39;);
+
+
+
+      if (isCorrect) {
+
+        fb.className = &#39;rounded-xl p-4 space-y-1 bg-emerald-50 border border-emerald-200 text-emerald-900&#39;;
+
+        fbTitle.textContent = `✓ 答對了！正確答案：${state.quizCurrent.neg}`;
+
+      } else {
+
+        fb.className = &#39;rounded-xl p-4 space-y-1 bg-rose-50 border border-rose-200 text-rose-900&#39;;
+
+        fbTitle.textContent = `✕ 再留意一下！正確答案是：${state.quizCurrent.neg}`;
+
+      }
+
+
+
+      const typeLabel = state.quizCurrent.type === &#39;i&#39; ? &#39;い形容詞&#39; : &#39;な形容詞&#39;;
+
+      fbDetail.textContent = `【${typeLabel}】${state.quizCurrent.rule}（${state.quizCurrent.negAlt}）`;
+
+      document.getElementById(&#39;next-quiz-btn&#39;).classList.remove(&#39;hidden&#39;);
+
+    }
+
+
+
+    document.getElementById(&#39;quiz-choices-container&#39;).addEventListener(&#39;click&#39;, (e) =&gt; {
+
+      const btn = e.target.closest(&#39;.quiz-choice-btn&#39;);
+
+      if (!btn || state.quizAnswered) return;
+
+      const chosen = btn.dataset.option;
+
+      const correct = state.quizCurrent.neg;
+
+      const isCorrect = chosen === correct;
+
+
+
+      document.querySelectorAll(&#39;.quiz-choice-btn&#39;).forEach(b =&gt; {
+
+        b.disabled = true;
+
+        if (b.dataset.option === correct) {
+
+          b.className = &#39;quiz-choice-btn jp-text min-h-[68px] px-4 py-3 rounded-2xl border-4 border-[#111827] bg-[#16A34A] text-xl sm:text-2xl font-black text-white text-center&#39;;
+
+        } else if (b === btn &amp;&amp; !isCorrect) {
+
+          b.className = &#39;quiz-choice-btn jp-text min-h-[68px] px-4 py-3 rounded-2xl border-4 border-[#111827] bg-[#F97316] text-xl sm:text-2xl font-black text-white text-center&#39;;
+
+        } else {
+
+          b.className = &#39;quiz-choice-btn jp-text min-h-[68px] px-4 py-3 rounded-2xl border-4 border-gray-300 bg-gray-100 text-xl sm:text-2xl font-black text-gray-400 text-center&#39;;
+
+        }
+
+      });
+
+
+
+      showQuizResult(isCorrect, chosen);
+
+    });
+
+
+
+    function checkTypingAnswer() {
+
+      if (state.quizAnswered) return;
+
+      const input = document.getElementById(&#39;quiz-typing-input&#39;);
+
+      const val = input.value.trim().replace(/\s+/g, &#39;&#39;);
+
+      if (!val) return;
+
+
+
+      const cur = state.quizCurrent;
+
+      const accepted = new Set([cur.neg, cur.negKana]);
+
+      if (cur.type === &#39;na&#39;) {
+
+        accepted.add(cur.word + &#39;ではありません&#39;);
+
+        accepted.add(cur.kana + &#39;ではありません&#39;);
+
+        accepted.add(cur.word + &#39;じゃありません&#39;);
+
+        accepted.add(cur.kana + &#39;じゃありません&#39;);
+
+      }
+
+
+
+      input.disabled = true;
+
+      document.getElementById(&#39;quiz-submit-typing-btn&#39;).disabled = true;
+
+      showQuizResult(accepted.has(val), val);
+
+    }
+
+
+
+    document.getElementById(&#39;quiz-submit-typing-btn&#39;).addEventListener(&#39;click&#39;, checkTypingAnswer);
+
+    document.getElementById(&#39;quiz-typing-input&#39;).addEventListener(&#39;keydown&#39;, (e) =&gt; {
+
+      if (e.key === &#39;Enter&#39;) checkTypingAnswer();
+
+    });
+
+
+
+    document.getElementById(&#39;next-quiz-btn&#39;).addEventListener(&#39;click&#39;, generateQuizQuestion);
+
+    document.getElementById(&#39;quiz-type-filter&#39;).addEventListener(&#39;change&#39;, (e) =&gt; {
+
+      state.quizTypeFilter = e.target.value;
+
+      generateQuizQuestion();
+
+    });
+
+    document.getElementById(&#39;quiz-mode-select&#39;).addEventListener(&#39;change&#39;, (e) =&gt; {
+
+      state.quizMode = e.target.value;
+
+      generateQuizQuestion();
+
+    });
+
+    document.getElementById(&#39;quiz-show-type-hint&#39;).addEventListener(&#39;change&#39;, (e) =&gt; {
+
+      state.quizShowTypeHint = e.target.checked;
+
+      const badge = document.getElementById(&#39;quiz-type-badge&#39;);
+
+      if (state.quizCurrent) {
+
+        badge.classList.toggle(&#39;hidden&#39;, !state.quizShowTypeHint);
+
+      }
+
+    });
+
+
+
+    // Init
+
+    applyFilter(&#39;all&#39;);
+
+    renderAntonymList();
+
+  &lt;/script&gt;
+
+&lt;/body&gt;
+
+&lt;/html&gt;
